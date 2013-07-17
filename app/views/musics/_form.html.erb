@@ -1,0 +1,50 @@
+<%= form_for(@music) do |f| %>
+  <% if @music.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@music.errors.count, "error") %> prohibited this music from being saved:</h2>
+
+      <ul>
+      <% @music.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.file_field :image_upload %>
+    <%= f.label :image_upload %>
+  </div>
+  <div class="field">
+    Remove Picture
+  <%= f.check_box :remove_image_upload %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.text_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.file_field :music_upload %>
+    <%= f.label :music_upload %>
+  </div>
+  <div class="field">
+    Remove Tracks
+  <%= f.check_box :remove_music_upload %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing musics</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Music upload</th>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>Rating</th>
+    <th>Image upload</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @musics.each do |music| %>
+  <tr>
+    <td><%= music.user.name %></td>
+    <td><audio controls>
+  <source src="<%= music.music_upload %>" type="audio/ogg">
+  <source src="<%= music.music_upload %>" type="audio/mpeg"></td>
+    <td><%= music.name %></td>
+    <td><%= music.genre %></td>
+    <td><%= music.rating %></td>
+    <td><% if music.image_upload.details.url %> <%= image_tag music.image_upload.thumb.url %> <% end %></td>
+    <td><%= link_to 'Show', music %></td>
+    <td><%= link_to 'Edit', edit_music_path(music) %></td>
+    <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Music', new_music_path %>

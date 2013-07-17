@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @music.user_id %>
+</p>
+
+<p>
+  <b>Music upload:</b>
+  <audio controls>
+  <source src="<%= @music.music_upload %>" type="audio/ogg">
+  <source src="<%= @music.music_upload %>" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @music.name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @music.genre %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @music.rating %>
+</p>
+
+
+  <% if @music.image_upload.details.url %>
+  <%= image_tag @music.image_upload.details.url %>
+  <% end %>
+
+ <!--  <% if @music.music_upload %>
+  <%= link_to @music.name, @music.music_upload.url %>
+  <% end %> -->
+
+
+
+<p>
+  <b>Comments:</b>
+  
+  <% @music.comments.each do |comments| %>
+    <li><%= comments.author.name %> wrote "<%= comments.description %>" at <%= comments.date %></li>
+  <% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_music_path(@music) %> |
+<%= link_to 'Back', musics_path %>

@@ -1,0 +1,11 @@
+<%= f.fields_for :images do |images_form| %>
+	<div class="field">
+    <%= images_form.file_field :image_upload %>
+    <%= images_form.label :image_upload %>
+    <% if @user.images.size > 0 %>
+  <%= image_tag @user.images.first.image_upload.thumb %>
+  <% end %>
+</p>
+  </div>
+<% end %>
+<%= f.link_to_add 'Add Images', :images %>

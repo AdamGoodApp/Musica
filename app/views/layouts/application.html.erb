@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Musicatestdb</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Musica</a>
+      	<ul class="nav">
+        	<li><%= link_to('DJs', users_path) %></li>
+        	<li><%= link_to('Music', musics_path)%></li>
+          <li><%= link_to('Comments', comments_path)%></li>
+      	</ul>
+    </div>
+  </div>
+
+<%= yield %>
+
+</body>
+</html>

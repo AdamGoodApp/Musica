@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @user.description %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @user.genre %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @user.location %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @user.rating %>
+</p>
+
+<p>
+  <% if @user.images.size > 0 %>
+  Avitar
+  <%= image_tag @user.images.first.image_upload %>
+  <% end %>
+</p>
+
+<% if @user and @user.images.size > 0 %>
+  <% @user.images.each do |image| %>
+    <%= image_tag image.image_upload.details.url %>
+  <% end %>
+<% end %>
+
+<li>Tracks: <% @user.musics.each do |music| %>
+<%= link_to music.name, music%><% end %></li>
+
+<!-- <li>Tracks: <% @user.musics.each do |music| %>
+<audio controls>
+  <source src="<%= music.music_upload %>" type="audio/ogg">
+  <source src="<%= music.music_upload %>" type="audio/mpeg">
+<% end %></li>
+ -->
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

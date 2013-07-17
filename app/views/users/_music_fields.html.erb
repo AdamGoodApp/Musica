@@ -1,0 +1,5 @@
+<%= f.fields_for :musics do |musics_form| %>
+	<%= musics_form.label :name %>
+	<%= musics_form.text_field :name %>
+<% end %>
+<%= f.link_to_add 'Add Music', :musics %>

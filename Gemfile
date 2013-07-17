@@ -12,6 +12,7 @@ gem 'ransack'
 gem 'nested_form'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
+gem 'acts_as_list'
 
 group :development, :test do
   gem 'pry-rails'

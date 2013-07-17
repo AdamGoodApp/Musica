@@ -17,6 +17,8 @@ Musicatestdb::Application.routes.draw do
   resources :users
 
   root to: 'home#home'
+  
+  resources :sessions, only: [:create, :destroy]
 
 
   # The priority is based upon order of creation:

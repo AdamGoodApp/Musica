@@ -1,0 +1,5 @@
+<%= form_tag sessions_path, class: "form-inline navbar-form pull-right" do %>
+    <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+    <%= password_field_tag :password, params[:password],  placeholder: "Password" %> 
+ <%= submit_tag "Log in", class: "btn" %>
+<% end %>

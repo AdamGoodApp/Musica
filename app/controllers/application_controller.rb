@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   		redirect_to login_url
   	end
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: "You cant access this page"
+  end
 end

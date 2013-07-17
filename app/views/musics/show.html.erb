@@ -48,6 +48,14 @@ Your browser does not support the audio element.
   <% end %>
 </p>
 
+<%= form_for @comment do |f| %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.hidden_field :music_id, value: @music.id %>
+  <%= f.submit %>
+
+<% end %>
+
 
 <%= link_to 'Edit', edit_music_path(@music) %> |
 <%= link_to 'Back', musics_path %>

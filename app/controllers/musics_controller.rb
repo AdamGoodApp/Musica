@@ -14,6 +14,7 @@ class MusicsController < ApplicationController
   # GET /musics/1.json
   def show
     @music = Music.find(params[:id])
+    @comment = Comment.new(music_id: params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

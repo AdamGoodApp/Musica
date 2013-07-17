@@ -27,13 +27,13 @@
 
 <p>
   <% if @user.images.size > 0 %>
-  Avitar
+  Avatar
   <%= image_tag @user.images.first.image_upload %>
   <% end %>
 </p>
 
 <% if @user and @user.images.size > 0 %>
-  <% @user.images.each do |image| %>
+  <% @user.images[1..-1].each do |image| %>
     <%= image_tag image.image_upload.details.url %>
   <% end %>
 <% end %>

@@ -40,6 +40,10 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    #params[:comment][:author_id] = current_user.id
+    params[:comment][:author_id] = User.first.id
+    params[:comment][:date] = DateTime.now
+
     @comment = Comment.new(params[:comment])
 
     respond_to do |format|

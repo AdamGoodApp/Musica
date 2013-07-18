@@ -13,6 +13,7 @@ gem 'nested_form'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'acts_as_list'
+gem 'validates_email_format_of'
 
 group :development, :test do
   gem 'pry-rails'

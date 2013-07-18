@@ -8,21 +8,32 @@
     <th>Genre</th>
     <th>Rating</th>
     <th>Image upload</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @musics.each do |music| %>
   <tr>
     <td><%= music.user.name %></td>
     <td><audio controls>
-  <source src="<%= music.music_upload %>" type="audio/ogg">
-  <source src="<%= music.music_upload %>" type="audio/mpeg"></td>
+    <source src="<%= music.music_upload %>" type="audio/ogg">
+    <source src="<%= music.music_upload %>" type="audio/mpeg"></td>
     <td><%= music.name %></td>
     <td><%= music.genre %></td>
     <td><%= music.rating %></td>
-    <td><% if music.image_upload.details.url %> <%= image_tag music.image_upload.thumb.url %> <% end %></td>
+    <td><ul class="tunes">
+    <li>
+      <div class="album">
+        <% if music.image_upload.details.url %> <%= image_tag music.image_upload.thumb.url %> <% end %>
+        <span class="vinyl">
+          <div></div>
+        </span>
+        <ul class="actions">
+          <li class="play-pause"><a href=""></a></li>
+          <li class="info"><%= link_to '', music %></li>
+        </ul>
+        <span class="gloss"></span>
+      </div>
+    </li>
+  </ul></td>
     <td><%= link_to 'Show', music %></td>
     <td><%= link_to 'Edit', edit_music_path(music) %></td>
     <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>

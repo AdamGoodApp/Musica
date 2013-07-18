@@ -25,6 +25,7 @@
   <%= @user.rating %>
 </p>
 
+
 <p>
   <% if @user.images.size > 0 %>
   Avatar
@@ -32,11 +33,13 @@
   <% end %>
 </p>
 
+<div id="demo-1" class="demobox">
 <% if @user and @user.images.size > 0 %>
   <% @user.images[1..-1].each do |image| %>
     <%= image_tag image.image_upload.details.url %>
   <% end %>
 <% end %>
+</div>
 
 <li>Tracks: <% @user.musics.each do |music| %>
 <%= link_to music.name, music%><% end %></li>

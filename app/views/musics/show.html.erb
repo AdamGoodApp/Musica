@@ -12,6 +12,11 @@
   <source src="<%= @music.music_upload %>" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+<% if current_user%>
+<a href="<%= @music.music_upload %>">Download audio </a>
+<% else %>
+Please pay
+<% end %>
 </p>
 
 <p>

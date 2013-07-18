@@ -1,0 +1,47 @@
+.navbar {
+	margin-bottom: 0px;
+}
+
+body {
+	color: #fff;
+	background-image:url('greywall.png');
+}
+
+.signup {
+	background-image:url('musicshow.jpg');
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+	height: 650px;
+}
+
+.title {
+	padding-left: 120px;
+	margin-top: 240px;
+}
+
+.title h1 {
+	width: 200px;
+}
+
+.title p {
+	width: 400px;
+}
+
+.signupform {
+	padding-left: 360px;
+	width: 300px;
+	margin-top: 140px;
+}
+
+#demo-1 img {
+	-webkit-transform: scale(1);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+}
+#demo-1 img:hover{
+	-webkit-transform: scale(.5);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+}
+
+	

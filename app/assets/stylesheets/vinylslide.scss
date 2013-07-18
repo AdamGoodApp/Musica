@@ -10,16 +10,16 @@ ul.tunes {
 	margin-left: -20px; 
 }
 
-ul.tunes li { position: relative; width: 200px; height: 190px; float: left; margin-left: 20px; }
-ul.tunes li div.album { margin: 0 0 48px 0; display: inline; width: 200px; height: 120px; position: absolute; text-decoration: none; -webkit-transition: all .15s linear; color: #333; left: 0px; top: 0px; }
-ul.tunes img { width: 120px; position: relative; z-index: 30; float: left; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -webkit-border-radius: 2px; }
+.record_animation { position: relative; width: 200px; height: 190px; float: left; margin-left: 20px; }
+.record_animation div.album { margin: 0 0 48px 0; display: inline; width: 200px; height: 120px; position: absolute; text-decoration: none; -webkit-transition: all .15s linear; color: #333; left: 0px; top: 0px; }
+.record_animation img { width: 120px; position: relative; z-index: 30; float: left; -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5); -webkit-border-radius: 2px; }
 
-ul.tunes li div.album div { display: block; opacity: .95; text-align: center; -webkit-transition: all .25s linear; clear: left; width: 120px;  }
-ul.tunes li div.album div h5 { text-align: center; }
-ul.tunes li div.album:hover div { opacity: 1; }
+.record_animation div.album div { display: block; opacity: .95; text-align: center; -webkit-transition: all .25s linear; clear: left; width: 120px;  }
+.record_animation div.album div h5 { text-align: center; }
+.record_animation div.album:hover div { opacity: 1; }
 
-ul.tunes li div.album span.vinyl { width: 116px; height: 116px; z-index: 1; display: block; -webkit-transition: all .25s linear;  position: absolute; top: 2px; left: 2px; margin-left: 16px; }
-ul.tunes li div.album span.vinyl div {
+.record_animation div.album span.vinyl { width: 116px; height: 116px; z-index: 1; display: block; -webkit-transition: all .25s linear;  position: absolute; top: 2px; left: 2px; margin-left: 16px; }
+.record_animation div.album span.vinyl div {
 position: absolute; 
 top: 2px; 
 left: 2px; 
@@ -51,22 +51,22 @@ background:
 		to(rgba(28,28,28,1)));
 border-top: 1px solid rgba(255,255,255,.25);
 }
-ul.tunes li div.album:hover span.vinyl { -webkit-transform: translateX(60px); }
-ul.tunes li div.album:hover span.vinyl div { -webkit-transform: rotate(120deg); border-top: 0; border-left: 1px solid rgba(255,255,255,.25); }
+.record_animation div.album:hover span.vinyl { -webkit-transform: translateX(60px); }
+.record_animation div.album:hover span.vinyl div { -webkit-transform: rotate(120deg); border-top: 0; border-left: 1px solid rgba(255,255,255,.25); }
 
-ul.tunes li span.gloss { display: block; position: absolute; top: 0; left: 0; width: 120px; height: 120px; background: url(/playground/playground/sliding-vinyl/sheen3.png) no-repeat; z-index: 100; }
+.record_animation span.gloss { display: block; position: absolute; top: 0; left: 0; width: 120px; height: 120px; background: url(/playground/playground/sliding-vinyl/sheen3.png) no-repeat; z-index: 100; }
 
-ul.tunes li div.album ul.actions { display: block; position: absolute; width: 60px; -moz-border-radius: 3px; -webkit-border-radius: 3px;left: 35px; top: 0px; height: 114px; z-index: 20; -webkit-transition: all 0.25s linear; }
-ul.tunes li div.album:hover ul.actions { -webkit-transform: translateX(60px); } 
+.record_animation div.album ul.actions { display: block; position: absolute; width: 60px; -moz-border-radius: 3px; -webkit-border-radius: 3px;left: 35px; top: 0px; height: 114px; z-index: 20; -webkit-transition: all 0.25s linear; }
+.record_animation div.album:hover ul.actions { -webkit-transform: translateX(60px); } 
 
-ul.tunes li div.album ul.actions li { display: block; position: absolute; height: 20px; width: 20px; left: 10px; top: 22px; background: -webkit-gradient(linear, left top, left bottom, from(black), to(#333)); -webkit-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.15); }
-ul.tunes li div.album ul.actions li:hover { background: -webkit-gradient(linear, left top, left bottom, from(#333), to(black)); }
-ul.tunes li div.album ul.actions li.info { top: 48px; left: 19px; }
-ul.tunes li div.album ul.actions li a { display: block; width: 20px; height: 20px; }
-ul.tunes li div.album ul.actions li.play-pause a { background: url(/assets/play-button.png) no-repeat center center; }
-ul.tunes li div.album ul.actions li.info a { background: url(/assets/info.png) no-repeat center center; }
+.record_animation div.album ul.actions li { display: block; position: absolute; height: 20px; width: 20px; left: 30px; top: 22px; background: -webkit-gradient(linear, left top, left bottom, from(black), to(#333)); -webkit-border-radius: 10px; -moz-border-radius: 10px; -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.15); }
+.record_animation div.album ul.actions li:hover { background: -webkit-gradient(linear, left top, left bottom, from(#333), to(black)); }
+.record_animation div.album ul.actions li.info { top: 48px; left: 45px; }
+.record_animation div.album ul.actions li a { display: block; width: 20px; height: 20px; }
+.record_animation div.album ul.actions li.play-pause a { background: url(/assets/play-button.png) no-repeat center center; }
+.record_animation div.album ul.actions li.info a { background: url(/assets/info.png) no-repeat center center; }
 
-ul.tunes li { text-shadow: 0 2px 3px rgba(0,0,0,.75); }
+.record_animation { text-shadow: 0 2px 3px rgba(0,0,0,.75); }
 
 ul.tunes h5 { padding-top: 8px; color: #fff; }
 ul.tunes small { color: #fff; opacity: .75; }

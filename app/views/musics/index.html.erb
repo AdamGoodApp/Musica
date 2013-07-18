@@ -3,37 +3,36 @@
 <table>
   <tr>
     <th>User</th>
-    <th>Music upload</th>
     <th>Name</th>
     <th>Genre</th>
     <th>Rating</th>
-    <th>Image upload</th>
+    <th>Track</th>
   </tr>
 
 <% @musics.each do |music| %>
   <tr>
     <td><%= music.user.name %></td>
-    <td><audio controls>
+    <!-- <td><audio controls>
     <source src="<%= music.music_upload %>" type="audio/ogg">
-    <source src="<%= music.music_upload %>" type="audio/mpeg"></td>
+    <source src="<%= music.music_upload %>" type="audio/mpeg"></td> -->
     <td><%= music.name %></td>
     <td><%= music.genre %></td>
     <td><%= music.rating %></td>
-    <td><ul class="tunes">
-    <li>
+    <td> <% if music.image_upload.details.url %> <ul class="tunes">
+    <div class="record_animation">
       <div class="album">
-        <% if music.image_upload.details.url %> <%= image_tag music.image_upload.thumb.url %> <% end %>
+         <%= image_tag music.image_upload.thumb.url %> 
         <span class="vinyl">
           <div></div>
         </span>
         <ul class="actions">
-          <li class="play-pause"><a href=""></a></li>
+          <li class="play-pause"><a href="<%= music.music_upload %>"></a></li>
           <li class="info"><%= link_to '', music %></li>
         </ul>
         <span class="gloss"></span>
       </div>
-    </li>
-  </ul></td>
+    </div>
+  </ul> <% end %></td>
     <td><%= link_to 'Show', music %></td>
     <td><%= link_to 'Edit', edit_music_path(music) %></td>
     <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -11,7 +11,7 @@ class Ability
     can :manage, User do |u|
         u.id == user.id
     end
-    can :read, :all
+    can :manage, :all
 
     else
         can :create, User

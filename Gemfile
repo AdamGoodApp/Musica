@@ -14,6 +14,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'cancan'
 gem 'acts_as_list'
 gem 'validates_email_format_of'
+gem 'seed_dump'
 
 group :development, :test do
   gem 'pry-rails'

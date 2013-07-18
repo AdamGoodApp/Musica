@@ -1,45 +1,34 @@
-<h1>Listing musics</h1>
+<div class="container">
+  <h1>Tracks</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Name</th>
-    <th>Genre</th>
-    <th>Rating</th>
-    <th>Track</th>
-  </tr>
+  <% @musics.each do |music| %>
+    <div class="usermusic">
+        <% if music.image_upload.details.url %> <ul class="tunes">
+          <div class="record_animation">
+            <div class="album">
+               <%= image_tag music.image_upload.thumb.url %> 
+              <span class="vinyl">
+                <div></div>
+              </span>
+              <ul class="actions">
+                <li class="play-pause"><a href="<%= music.music_upload %>"></a></li>
+                <li class="info"><%= link_to '', music %></li>
+              </ul>
+              <span class="gloss"></span>
+            </div>
+          </div>
+        </ul> 
+        <% end %>
+        <p><%= music.user.name %></p>
+        <p><%= music.name %></p>
+        <p><%= music.genre %></p>
+        <p><%= music.rating %></p>
+        <p><%= link_to 'Edit', edit_music_path(music) %></p>
+        <p><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>    
+  <% end %>
 
-<% @musics.each do |music| %>
-  <tr>
-    <td><%= music.user.name %></td>
-    <!-- <td><audio controls>
-    <source src="<%= music.music_upload %>" type="audio/ogg">
-    <source src="<%= music.music_upload %>" type="audio/mpeg"></td> -->
-    <td><%= music.name %></td>
-    <td><%= music.genre %></td>
-    <td><%= music.rating %></td>
-    <td> <% if music.image_upload.details.url %> <ul class="tunes">
-    <div class="record_animation">
-      <div class="album">
-         <%= image_tag music.image_upload.thumb.url %> 
-        <span class="vinyl">
-          <div></div>
-        </span>
-        <ul class="actions">
-          <li class="play-pause"><a href="<%= music.music_upload %>"></a></li>
-          <li class="info"><%= link_to '', music %></li>
-        </ul>
-        <span class="gloss"></span>
-      </div>
-    </div>
-  </ul> <% end %></td>
-    <td><%= link_to 'Show', music %></td>
-    <td><%= link_to 'Edit', edit_music_path(music) %></td>
-    <td><%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Music', new_music_path %>
+  <div class="btn2">
+  <%= link_to image_tag('upload.png'), new_music_path%>
+  </div>
+</div>

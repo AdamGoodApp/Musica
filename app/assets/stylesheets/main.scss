@@ -11,7 +11,7 @@ body {
 	background-image:url('musicshow.jpg');
 	background-repeat:no-repeat;
 	background-size: 100% 100%;
-	height: 650px;
+	height: 750px;
 }
 
 .title {
@@ -45,3 +45,52 @@ body {
 }
 
 	
+.playmusic {
+	display: block;
+	
+	padding-top: 50px;
+}
+
+.playmusic h3 {
+	display: block;
+	margin-left: 433px;
+	margin-bottom: 58px;
+
+}
+
+iframe {
+	margin-bottom: 100px;
+	margin-left: 251px;
+}
+
+.profiles img {
+	width: 1285px;
+}
+
+.user {
+	float: left;
+	display: inline-block;
+	margin-top: 50px;
+	margin-right: 40px;
+}
+
+.usermusic {
+	float: left;
+	display: inline-block;
+	margin-top: 50px;
+	margin-right: 113px;
+}
+
+.btn2 {
+ height: 90px;
+ width: 90px;
+}
+
+
+
+
+
+
+
+
+

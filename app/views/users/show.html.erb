@@ -29,7 +29,7 @@
 <p>
   <% if @user.images.size > 0 %>
   Avatar
-  <%= image_tag @user.images.first.image_upload %>
+  <%= image_tag @user.images.first.image_upload.avatar.url %>
   <% end %>
 </p>
 

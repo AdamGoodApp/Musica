@@ -5,18 +5,14 @@ class Ability
    user ||= User.new
    case
     when user.role?("admin")
-    can :manage, :all
-
+      can :manage, :all
     when user.role?("premium")
-    can :manage, User do |u|
-        u.id == user.id
-    end
-    can :manage, :all
-
+      can :read, :all
+      can :manage, User, id: user.id
+      can :manage, [Music, Comment, Image], user_id: user.id
     else
-        can :create, User
-        can :read, :all
-
+      can :create, User
+      can :read, :all
     end
   end
 end

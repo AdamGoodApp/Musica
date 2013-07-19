@@ -1,66 +1,59 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @music.user.name %>
-</p>
-
-<p>
-  <b>Music upload:</b>
-  <audio controls>
-  <source src="<%= @music.music_upload %>" type="audio/ogg">
-  <source src="<%= @music.music_upload %>" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
-<% if current_user%>
-<a href="<%= @music.music_upload %>">Download audio </a>
-<% else %>
-Please pay
-<% end %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @music.name %>
-</p>
-
-<p>
-  <b>Genre:</b>
-  <%= @music.genre %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%= @music.rating %>
-</p>
-
+<div class="container">
 
   <% if @music.image_upload.details.url %>
-  <%= image_tag @music.image_upload.details.url %>
-  <% end %>
+    <%= image_tag @music.image_upload.details.url %>
+    <% end %>
 
- <!--  <% if @music.music_upload %>
-  <%= link_to @music.name, @music.music_upload.url %>
-  <% end %> -->
+  <p id="notice"><%= notice %></p>
 
-
-
-<p>
-  <b>Comments:</b>
+ 
+    <h4>User</h4>
+    <%= @music.user.name %>
   
-  <% @music.comments.each do |comments| %>
-    <li><%= comments.author.name %> wrote "<%= comments.description %>" at <%= comments.date %></li>
+    <h4>Name</h4>
+    <%= @music.name %>
+   
+    <h4>Genre</h4>
+    <%= @music.genre %>
+  
+    <h4>Rating</h4>
+    <%= @music.rating %>
+  
+
+
+   <!--  <% if @music.music_upload %>
+    <%= link_to @music.name, @music.music_upload.url %>
+    <% end %> -->
+
+    <h4>Music upload:</h4>
+    <audio controls>
+    <source src="<%= @music.music_upload %>" type="audio/ogg">
+    <source src="<%= @music.music_upload %>" type="audio/mpeg">
+    Your browser does not support the audio element.
+    </audio>
+    <% if current_user%>
+    <a href="<%= @music.music_upload %>">Download audio </a>
+    <% else %>
+    Please pay
+    <% end %>
+ 
+    <h4>Comments</h4>
+    
+    <% @music.comments.each do |comments| %>
+      <p><strong><%= comments.author.name %></strong> <br> <%= comments.date %> <br> "<%= comments.description %>"</p>
+    <% end %>
+  
+
+  <%= form_for @comment do |f| %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    <%= f.hidden_field :music_id, value: @music.id %>
+    <%= f.submit %>
+
   <% end %>
-</p>
-
-<%= form_for @comment do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.hidden_field :music_id, value: @music.id %>
-  <%= f.submit %>
-
-<% end %>
 
 
-<%= link_to 'Edit', edit_music_path(@music) %> |
-<%= link_to 'Back', musics_path %>
+  <%= link_to 'Edit', edit_music_path(@music) %> |
+  <%= link_to 'Back', musics_path %>
+
+</div>

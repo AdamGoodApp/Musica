@@ -1,55 +1,50 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Description:</b>
-  <%= @user.description %>
-</p>
+    <% if @user.images.size > 0 %>
+    <%= image_tag @user.images.first.image_upload.avatar.url %>
+    <% end %>
 
-<p>
-  <b>Genre:</b>
-  <%= @user.genre %>
-</p>
+    <h1><%= @user.name %></h1>
 
-<p>
-  <b>Location:</b>
-  <%= @user.location %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%= @user.rating %>
-</p>
+    <h4><p>Tracks</p>
+    <% @user.musics.each do |music| %>
+    <%= link_to music.name, music%><% end %></li> </h4>
 
 
-<p>
-  <% if @user.images.size > 0 %>
-  Avatar
-  <%= image_tag @user.images.first.image_upload.avatar.url %>
+    <h4>Description:</h4>
+    <%= @user.description %>
+
+
+    <h4>Genre:</h4>
+    <%= @user.genre %>
+
+
+    <h4>Location:</h4>
+    <%= @user.location %>
+
+
+    <h4>Rating:</h4>
+    <%= @user.rating %>
+
+
+  <div id="demo-1" class="demobox">
+  <% if @user and @user.images.size > 0 %>
+    <% @user.images[1..-1].each do |image| %>
+      <%= image_tag image.image_upload.details.url %>
+    <% end %>
   <% end %>
-</p>
+  </div>
 
-<div id="demo-1" class="demobox">
-<% if @user and @user.images.size > 0 %>
-  <% @user.images[1..-1].each do |image| %>
-    <%= image_tag image.image_upload.details.url %>
-  <% end %>
-<% end %>
+  <!-- <li>Tracks: <% @user.musics.each do |music| %>
+  <audio controls>
+    <source src="<%= music.music_upload %>" type="audio/ogg">
+    <source src="<%= music.music_upload %>" type="audio/mpeg">
+  <% end %></li>
+   -->
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+
 </div>
-
-<li>Tracks: <% @user.musics.each do |music| %>
-<%= link_to music.name, music%><% end %></li>
-
-<!-- <li>Tracks: <% @user.musics.each do |music| %>
-<audio controls>
-  <source src="<%= music.music_upload %>" type="audio/ogg">
-  <source src="<%= music.music_upload %>" type="audio/mpeg">
-<% end %></li>
- -->
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
